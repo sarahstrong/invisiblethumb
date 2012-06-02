@@ -1,0 +1,21 @@
+{
+	"name": "Invisible Thumb",
+	"version": "1.0",
+	"manifest_version": 1,
+	"description": "An extension that uses the Nike sustainability index API to inform consumer decisions about the environmental impact of production decisions",
+	"content_scripts": [
+		{
+			"matches": [
+				"http://*.amazon.com/*",
+				"http://*.localhost/*"
+			],
+			"js": [
+				"lib/jquery-1.7.2.js",
+				"sustainability.js"
+			]
+		}
+	],
+	"browser_action": {
+		"default_icon": "icon.png"
+	}
+}
