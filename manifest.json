@@ -6,8 +6,8 @@
 	"content_scripts": [
 		{
 			"matches": [
-				"http://*.amazon.com/*",
-				"http://*.localhost/*"
+				"http://www.amazon.com/*",
+				"http://localhost/*"
 			],
 			"js": [
 				"lib/jquery-1.7.2.js",
