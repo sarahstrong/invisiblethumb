@@ -1,4 +1,4 @@
 (function() {
-	sustainabilityClientTest();
-	candidatesWrapperTest();
+	sustainabilityClientTest.run();
+	candidatesWrapperTest.run();
 })();
