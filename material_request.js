@@ -14,20 +14,20 @@ NikeAPI.prototype = {
 	/**
 	 * Public API
 	 */
-	getMaterial: function( materialName, callback ) {
-		this._grabMaterialList( materialName, this._exactMatch, callback );
+	getMaterial: function( materialName, responseHandler ) {
+		this._grabMaterialList( materialName, this._exactMatch, responseHandler );
 	},
 	
-	searchMaterials: function( materialQuery, callback ) {
-		this._grabMaterialList( materialQuery, this._fuzzyMatch, callback );
+	searchMaterials: function( materialQuery, responseHandler ) {
+		this._grabMaterialList( materialQuery, this._fuzzyMatch, responseHandler );
 	},
 	
 	/**
 	 * "Private" methods
 	 */
-	_grabMaterialList: function( query, callback, responseCallback ) {
+	_grabMaterialList: function( queryString, searchHandler, responseHandler ) {
 		$.get( this._assembleUrl(), function( data ) {
-			responseCallback( callback( query, data.data ) );
+			responseHandler( searchHandler( queryString, data.data ) );
 		});
 	},
 	
