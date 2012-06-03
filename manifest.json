@@ -16,6 +16,7 @@
 				"lib/materials_sustainability_index_client.js",
 				"lib/material_candidates_wrapper.js",
 				
+				"test/assert.js",
 				"test/materials_sustainability_client_test.js",
 				"test/material_candidates_wrapper_test.js",
 				
