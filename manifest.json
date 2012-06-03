@@ -12,8 +12,8 @@
 			],
 			"js": [
 				"lib/jquery-1.7.2.js",
-				"material_request.js",
-				"sustainability.js"
+				"sustainability_client.js",
+				"invisible_thumb.js"
 			]
 		}
 	],
