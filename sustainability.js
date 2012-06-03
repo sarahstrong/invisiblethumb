@@ -1,19 +1,17 @@
-(function( document, $ ){
-	/**
-	 * request handler
-	 */
-	var apiKey = "rhok";
-	var endPoint = "http://nikemsiapi.nikebetterworld.com/materials/list/key:"+apiKey+"/.json";
-	function materialRequest( url, materialName, responseCallback ) {
-		$.get( url, function( data ) {
-			responseCallback(data.data);
-		});
-	};
+var API = new NikeAPI( "http://nikemsiapi.nikebetterworld.com/materials/list", "rhok", ".json" );
 
-	/**
-	 * response handler
-	 */
-	var materialResult = materialRequest( endPoint, "foo", function( materials ) {
-		console.debug( materials );
-	});
-})( document, $ );
+/**
+ * response handling
+ */
+var materialResult, materialsResult;
+console.debug("running first query");
+API.getMaterial( "Acrylic fabric", function( data ) {
+	console.debug("in first query callback");
+	console.debug( data );
+});
+console.debug("running second query");
+API.getMaterial( "*foo*", function( data ) {
+	console.debug("in second query callback");
+	console.debug( data );
+});
+console.debug("sequentially done");
