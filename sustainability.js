@@ -1,8 +1,19 @@
-(function( dom, jq ){
-	// should only appear on the sites for which we've permissions
-	dom.title = "this is just a test";
-	if( jq.inArray( 1, [1, 2, 3]) >= 0 ){
-		console.debug("successfully loaded jquery!");
-	}
-})( document, $ );
+(function( document, $ ){
+	/**
+	 * request handler
+	 */
+	var apiKey = "rhok";
+	var endPoint = "http://nikemsiapi.nikebetterworld.com/materials/list/key:"+apiKey+"/.json";
+	function materialRequest( url, materialName, responseCallback ) {
+		$.get( url, function( data ) {
+			responseCallback(data.data);
+		});
+	};
 
+	/**
+	 * response handler
+	 */
+	var materialResult = materialRequest( endPoint, "foo", function( materials ) {
+		console.debug( materials );
+	});
+})( document, $ );

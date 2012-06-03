@@ -6,6 +6,7 @@
 	"content_scripts": [
 		{
 			"matches": [
+				"http://nikemsiapi.nikebetterworld.com/*",
 				"http://www.amazon.com/*",
 				"http://localhost/*"
 			],
